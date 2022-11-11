@@ -23,6 +23,6 @@ const dataSlice = createSlice({
   },
 });
 
-export const dataSelect = (state) => state.dataSlice.data;
+export const selectedData = (state) => state.dataSlice.data;
 export const { addData } = dataSlice.actions;
 export default dataSlice.reducer;

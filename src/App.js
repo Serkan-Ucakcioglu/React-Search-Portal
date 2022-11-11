@@ -1,10 +1,9 @@
 import "./App.css";
 import { useSelector } from "react-redux";
-import { dataSelect } from "./Features/dataSlice";
+import { selectedData } from "./Features/dataSlice";
 
 function App() {
-  const data = useSelector(dataSelect);
-  console.log(data);
+  const data = useSelector(selectedData);
 
   return (
     <div className="App">
