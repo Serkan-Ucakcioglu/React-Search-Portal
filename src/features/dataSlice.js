@@ -3,12 +3,12 @@ import dbjson from "../db.json";
 
 // data
 let db = dbjson;
-
 const data = db.data.map((info) =>
   db.cols.map((_, i) => [db.cols[i], info[i]])
 );
 // data to be used
 const newData = data.map((arr) => Object.fromEntries(arr));
+
 const initialState = {
   data: newData,
 };
