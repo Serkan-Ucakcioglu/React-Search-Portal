@@ -1,6 +1,6 @@
 import "./App.css";
 import { useSelector } from "react-redux";
-import { dataSelect } from "./features/dataSlice";
+import { dataSelect } from "./Features/dataSlice";
 
 function App() {
   const data = useSelector(dataSelect);
