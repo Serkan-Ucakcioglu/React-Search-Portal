@@ -56,7 +56,7 @@
       margin-left: 15px;
 
       .search_input {
-        width: 90%;
+        width: 646px;
         border: 2px solid #204080;
         border-radius: 8px;
         height: 48px;
@@ -73,7 +73,7 @@
       }
     }
     .search_result {
-      width: 600.84px;
+      width: 720.84px;
       height: 248.25px;
       padding-left: 10px;
       background: #ffffff;
@@ -106,6 +106,58 @@
             font-weight: 400;
             font-size: 14px;
             margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  .top_news {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 93px;
+  }
+  .tops {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .tops_head_title {
+      text-align: left;
+      font-weight: 700;
+      font-size: 32px;
+      color: #090a0a;
+    }
+    .news {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      .right {
+        transform: rotate(180deg);
+        margin-left: 23px;
+      }
+      .left {
+        margin-right: 23px;
+      }
+      .news_tops {
+        margin-left: 23.92px;
+
+        .news_text {
+          display: flex;
+          flex-direction: column;
+          .news_title {
+            margin-top: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #090a0a;
+            text-align: left;
+          }
+          .news_time {
+            text-align: left;
+            margin-top: 8px;
+            color: #6c7072;
+            font-weight: 400;
+            font-size: 12px;
           }
         }
       }
