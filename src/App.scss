@@ -113,15 +113,14 @@
   }
   .top_news {
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
     margin-top: 93px;
+    margin-bottom: 5px;
   }
   .tops {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     .tops_head_title {
       text-align: left;
       font-weight: 700;
@@ -160,6 +159,37 @@
             font-size: 12px;
           }
         }
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    margin-top: 58px;
+  }
+  .footers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 250.13px;
+    padding: 25px;
+    background: rgba(41, 78, 152, 0.72);
+    .footer_svg {
+      width: 217.42px;
+      height: 179.5px;
+    }
+    .footer_text {
+      width: 424.98px;
+      height: 171.77px;
+      text-align: left;
+      color: white;
+      margin-left: 25.42px;
+      p {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 700;
       }
     }
   }
