@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  .new_record {
+    width: 197.16px;
+    height: 46px;
+    background: #204080;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    font-size: 18px;
+    margin-top: 50px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .main_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search_main {
+    margin-top: 73px;
+  }
+  .logo {
+    width: 278px;
+    height: 115px;
+  }
+  .add_record {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .search_head {
+    display: flex;
+    flex-direction: column;
+    .search_head_title {
+      margin-top: 11px;
+      margin-left: auto;
+      color: #484848;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+}
+
+.container {
+  width: 1064px;
+  margin: 0px auto;
+}

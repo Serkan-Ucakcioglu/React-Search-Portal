@@ -16,13 +16,9 @@ const initialState = {
 const dataSlice = createSlice({
   name: "dataSlice",
   initialState,
-  reducers: {
-    addData: (state, { payload }) => {
-      state.data = payload;
-    },
-  },
+  reducers: {},
 });
 
 export const selectedData = (state) => state.dataSlice.data;
-export const { addData } = dataSlice.actions;
+export const {} = dataSlice.actions;
 export default dataSlice.reducer;

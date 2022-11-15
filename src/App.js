@@ -1,14 +1,10 @@
-import "./App.css";
-import { useSelector } from "react-redux";
-import { selectedData } from "./Features/dataSlice";
+import "./App.scss";
+import MainPage from "./Views/MainPage";
 
 function App() {
-  const data = useSelector(selectedData);
-
   return (
     <div className="App">
-      <h1>hello</h1>
-      <div></div>
+      <MainPage />
     </div>
   );
 }
