@@ -20,10 +20,7 @@
   .search_main {
     margin-top: 73px;
   }
-  .logo {
-    width: 278px;
-    height: 115px;
-  }
+
   .add_record {
     width: 100%;
     display: flex;
@@ -32,12 +29,87 @@
   .search_head {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    .logo {
+      width: 278px;
+      height: 115px;
+    }
     .search_head_title {
-      margin-top: 11px;
-      margin-left: auto;
+      width: 340px;
+      margin-top: 14px;
+      text-align: right;
       color: #484848;
       font-size: 14px;
       font-weight: 700;
+    }
+  }
+  .search_content {
+    h1 {
+      text-align: left;
+      font-weight: 700;
+      font-size: 32px;
+      color: #090a0a;
+    }
+    .search {
+      display: flex;
+      flex-direction: row;
+
+      .search_input {
+        width: 90%;
+        border: 2px solid #204080;
+        border-radius: 8px;
+        height: 48px;
+        margin-right: 11px;
+      }
+      .search_btn {
+        font-size: 18px;
+        font-weight: 700;
+        background: #204080;
+        border-radius: 12px;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .search_result {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 600.84px;
+      height: 248.25px;
+      padding-left: 10px;
+      background: #ffffff;
+      border: 1px solid #484848;
+      border-radius: 24px;
+      margin-top: 10px;
+      .item {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+        margin-left: 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #f1f1f1;
+        height: 63px;
+        .item_text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          align-items: start;
+          .item_head_title {
+            font-weight: 400;
+            font-size: 16px;
+            color: #090a0a;
+          }
+          span {
+            color: #72777a;
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+        }
+      }
     }
   }
 }
