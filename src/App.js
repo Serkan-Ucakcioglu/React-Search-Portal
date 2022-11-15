@@ -1,10 +1,10 @@
 import "./App.scss";
-import MainPage from "./Views/MainPage";
+import AddUsers from "./Views/AddUsers";
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <AddUsers />
     </div>
   );
 }
