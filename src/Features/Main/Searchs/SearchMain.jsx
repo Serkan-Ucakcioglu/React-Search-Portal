@@ -33,7 +33,6 @@ function SearchMain() {
       )
     );
   };
-
   return (
     <>
       <div className="search_head">

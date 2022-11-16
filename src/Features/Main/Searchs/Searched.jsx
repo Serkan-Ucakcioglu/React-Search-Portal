@@ -14,7 +14,7 @@ function Searched({ searchs }) {
           </div>
         );
       })}
-      {searchs.length >= 3 && (
+      {searchs?.length >= 3 && (
         <a href="#" className="show_text">
           Show more...
         </a>
