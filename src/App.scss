@@ -70,6 +70,8 @@
       .search_input {
         width: 646px;
         border: 2px solid #204080;
+        padding-left: 40px;
+        box-sizing: border-box;
         border-radius: 8px;
         height: 48px;
         margin-right: 11px;
@@ -90,6 +92,7 @@
       width: 710.84px;
       height: 248.25px;
       padding-left: 10px;
+      overflow: auto;
       background: #ffffff;
       border: 1px solid #484848;
       border-radius: 24px;

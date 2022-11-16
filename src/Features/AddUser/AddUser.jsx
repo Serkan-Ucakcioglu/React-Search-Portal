@@ -2,8 +2,8 @@ import Logo from "../../Svg/Logo.svg";
 import Arrow from "../../Svg/Arrows.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addRecord, check, errorCheck, selectedData } from "../dataSlice";
+import { useDispatch } from "react-redux";
+import { addRecord } from "../dataSlice";
 
 function AddUser() {
   const {
@@ -12,15 +12,12 @@ function AddUser() {
     reset,
     formState: { errors },
   } = useForm();
-  const data = useSelector(selectedData);
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(addRecord(data));
     reset();
   };
-  console.log(data);
-
   return (
     <div className="add_user">
       <div className="head_user">

@@ -11,6 +11,8 @@ const newData = data.map((arr) => Object.fromEntries(arr));
 
 const initialState = {
   data: newData,
+  search: [],
+  lastSearch: "",
 };
 const dataSlice = createSlice({
   name: "dataSlice",
@@ -24,9 +26,17 @@ const dataSlice = createSlice({
         state.data.push(payload);
       }
     },
+    lastSearchs: (state, { payload }) => {
+      state.lastSearch = payload;
+    },
+    search: (state, { payload }) => {
+      state.search = payload;
+    },
   },
 });
 
 export const selectedData = (state) => state.dataSlice.data;
-export const { addRecord } = dataSlice.actions;
+export const selectedLast = (state) => state.dataSlice.lastSearch;
+export const selectedSearch = (state) => state.dataSlice.search;
+export const { addRecord, lastSearchs, search } = dataSlice.actions;
 export default dataSlice.reducer;
