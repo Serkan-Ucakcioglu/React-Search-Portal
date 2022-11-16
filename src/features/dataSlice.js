@@ -12,13 +12,21 @@ const newData = data.map((arr) => Object.fromEntries(arr));
 const initialState = {
   data: newData,
 };
-
 const dataSlice = createSlice({
   name: "dataSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    addRecord: (state, { payload }) => {
+      let checkUser = state.data.find(
+        (user) => user.Email.toLowerCase() === payload.Email.toLowerCase()
+      );
+      if (!checkUser) {
+        state.data.push(payload);
+      }
+    },
+  },
 });
 
 export const selectedData = (state) => state.dataSlice.data;
-export const {} = dataSlice.actions;
+export const { addRecord } = dataSlice.actions;
 export default dataSlice.reducer;
