@@ -122,7 +122,7 @@
     justify-content: center;
     align-items: center;
     .tops_head_title {
-      text-align: left;
+      margin-right: auto;
       font-weight: 700;
       font-size: 32px;
       color: #090a0a;
@@ -237,6 +237,11 @@
         label {
           text-align: left;
           margin-bottom: 7px;
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          color: #686868;
         }
         input {
           width: 100%;

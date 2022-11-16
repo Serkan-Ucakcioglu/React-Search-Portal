@@ -1,10 +1,10 @@
+import { Outlet } from "react-router-dom";
 import "./App.scss";
-import AddUsers from "./Views/AddUsers";
 
 function App() {
   return (
     <div className="App">
-      <AddUsers />
+      <Outlet />
     </div>
   );
 }

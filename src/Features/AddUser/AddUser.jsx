@@ -1,12 +1,12 @@
 import Logo from "../../Svg/Logo.svg";
 import Arrow from "../../Svg/Arrows.svg";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 function AddUser() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
@@ -14,7 +14,9 @@ function AddUser() {
   return (
     <div className="add_user">
       <div className="head_user">
-        <img className="logo" src={Logo} alt="logo" />
+        <Link to="/">
+          <img className="logo" src={Logo} alt="logo" />
+        </Link>
         <div className="title">
           <img src={Arrow} alt="arrow" />
           <h1>Return to List Page</h1>
