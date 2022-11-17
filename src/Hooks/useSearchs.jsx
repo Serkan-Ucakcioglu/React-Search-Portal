@@ -20,7 +20,7 @@ function useSearchs() {
       search(
         data.filter((user) =>
           cols.some((key) =>
-            user[key].toUpperCase().includes(value.toUpperCase())
+            user[key].toUpperCase().includes(value.trim().toUpperCase())
           )
         )
       )

@@ -15,7 +15,6 @@ function SearchDetail() {
         <img className="logo" src={Logo} alt="Logo" />
       </Link>
       <div className="search">
-        <img className="search_svg" src={Search} alt="search-svg" />
         <input
           value={lastSearch}
           onChange={onChanges}

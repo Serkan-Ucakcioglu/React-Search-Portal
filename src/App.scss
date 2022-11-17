@@ -277,13 +277,69 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    height: 100px;
     margin: 0px auto;
     align-items: center;
-
+    .record {
+      margin-left: 120px;
+      margin-bottom: 50px;
+    }
+    .search {
+      input {
+        width: 509px;
+        height: 46px;
+        padding: 2px !important;
+        font-family: "Roboto";
+        outline: none;
+        font-size: 18px;
+        font-weight: 700;
+        color: #484848;
+      }
+      .search_btn {
+        background: #4f75c2 !important;
+      }
+    }
     .logo {
       width: 149px;
       height: 63px;
       margin-right: 20px;
+    }
+  }
+  .detail_content {
+    display: flex;
+    justify-content: center;
+    .selectList {
+      margin-left: 18px;
+    }
+    .item_list {
+      width: 720px;
+      height: 505px;
+      margin-right: 40px;
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #686868;
+        width: 726px;
+        height: 78px;
+        .info {
+          display: flex;
+          img {
+            width: 18px;
+            height: 22px;
+          }
+          .info_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+        .name {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
     }
   }
 }
@@ -336,9 +392,4 @@
     border: none;
     cursor: pointer;
   }
-}
-
-.record {
-  margin-bottom: 50px !important;
-  margin-left: 60px;
 }

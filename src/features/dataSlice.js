@@ -12,7 +12,7 @@ const newData = data.map((arr) => Object.fromEntries(arr));
 const initialState = {
   data: newData,
   search: [],
-  lastSearch: "",
+  lastSearch: JSON.parse(localStorage.getItem("lastSearch")) || "",
 };
 const dataSlice = createSlice({
   name: "dataSlice",
@@ -28,6 +28,7 @@ const dataSlice = createSlice({
     },
     lastSearchs: (state, { payload }) => {
       state.lastSearch = payload;
+      localStorage.setItem("lastSearch", JSON.stringify(payload));
     },
     search: (state, { payload }) => {
       state.search = payload;
