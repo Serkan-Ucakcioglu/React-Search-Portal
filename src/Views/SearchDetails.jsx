@@ -1,6 +1,6 @@
 import React from "react";
-import SearchContent from "../Features/SearchDetail/SearchContent";
-import SearchDetail from "../Features/SearchDetail/SearchDetail";
+import SearchContent from "../Features/SearchDetailPage/SearchContent";
+import SearchDetail from "../Features/SearchDetailPage/SearchDetail";
 
 function SearchDetails() {
   return (

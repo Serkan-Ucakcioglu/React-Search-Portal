@@ -11,7 +11,7 @@ const newData = data.map((arr) => Object.fromEntries(arr));
 
 const initialState = {
   data: newData,
-  search: [],
+  search: JSON.parse(localStorage.getItem("searchList")) || [],
   lastSearch: JSON.parse(localStorage.getItem("lastSearch")) || "",
 };
 const dataSlice = createSlice({
@@ -32,6 +32,23 @@ const dataSlice = createSlice({
     },
     search: (state, { payload }) => {
       state.search = payload;
+      localStorage.setItem("searchList", JSON.stringify(state.search));
+    },
+    nameasc: (state) => {
+      state.search.sort((a, b) =>
+        a["Name Surname"] > b["Name Surname"] ? 1 : -1
+      );
+    },
+    namedesc: (state) => {
+      state.search.sort((a, b) =>
+        a["Name Surname"] < b["Name Surname"] ? 1 : -1
+      );
+    },
+    dateasc: (state) => {
+      state.search.sort((a, b) => (a.Date > b.Date ? 1 : -1));
+    },
+    datedesc: (state) => {
+      state.search.sort((a, b) => (a.Date < b.Date ? 1 : -1));
     },
   },
 });
@@ -39,5 +56,13 @@ const dataSlice = createSlice({
 export const selectedData = (state) => state.dataSlice.data;
 export const selectedLast = (state) => state.dataSlice.lastSearch;
 export const selectedSearch = (state) => state.dataSlice.search;
-export const { addRecord, lastSearchs, search } = dataSlice.actions;
+export const {
+  addRecord,
+  lastSearchs,
+  search,
+  nameasc,
+  namedesc,
+  dateasc,
+  datedesc,
+} = dataSlice.actions;
 export default dataSlice.reducer;

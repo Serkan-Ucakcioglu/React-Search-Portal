@@ -1,15 +1,13 @@
 import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectedData } from "../../Features/dataSlice";
+import { selectedSearch } from "../../Features/dataSlice";
 import PaginationItem from "./PaginationItem";
-import Records from "./Records";
 
 function Pagination() {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
 
-  const data = useSelector(selectedData);
-
+  const data = useSelector(selectedSearch);
   const newData = useMemo(() => {
     const lastRecord = currentPage * recordsPerPage;
     const firstRecord = lastRecord - recordsPerPage;
@@ -18,9 +16,8 @@ function Pagination() {
 
   return (
     <div className="container mt-5">
-      <Records data={newData} />
       <PaginationItem
-        pages={10}
+        pages={data?.length}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
