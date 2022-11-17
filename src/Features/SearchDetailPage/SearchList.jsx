@@ -11,6 +11,7 @@ function SearchList({ user }) {
         </div>
       </div>
       <div className="name">
+        <span>{user && user["Name Surname"]}</span>
         <span>{user?.Date}</span>
       </div>
     </div>

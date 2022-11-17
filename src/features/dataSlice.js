@@ -25,6 +25,7 @@ const dataSlice = createSlice({
       if (!checkUser) {
         state.data.push(payload);
       }
+      localStorage.setItem("allData", JSON.stringify(state.data));
     },
     lastSearchs: (state, { payload }) => {
       state.lastSearch = payload;
