@@ -275,17 +275,21 @@
   }
   .search_detail {
     display: flex;
-    padding: 27px;
-    justify-content: flex-start;
-    img {
+    width: 100%;
+    justify-content: center;
+    margin: 0px auto;
+    align-items: center;
+
+    .logo {
       width: 149px;
       height: 63px;
+      margin-right: 20px;
     }
   }
 }
 
 .container {
-  width: 1064px;
+  width: 1100px;
   margin: 0px auto;
 }
 
@@ -296,6 +300,7 @@
 .search {
   display: flex;
   position: relative;
+  justify-content: space-between;
   height: 48px;
   flex-direction: row;
   align-items: center;
@@ -331,4 +336,9 @@
     border: none;
     cursor: pointer;
   }
+}
+
+.record {
+  margin-bottom: 50px !important;
+  margin-left: 60px;
 }

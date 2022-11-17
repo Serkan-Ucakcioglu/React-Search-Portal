@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Searched from "./Searched";
 import useSearchs from "../../../Hooks/useSearchs";
 import { selectedSearch } from "../../dataSlice";
+import { Link } from "react-router-dom";
 
 function SearchMain() {
   const searchs = useSelector(selectedSearch);
@@ -26,9 +27,12 @@ function SearchMain() {
             className="search_input"
             type="text"
           />
-          <button disabled={!searchs?.length} className="search_btn">
-            Search
-          </button>
+          <Link to="search-result">
+            {" "}
+            <button disabled={!searchs?.length} className="search_btn">
+              Search
+            </button>
+          </Link>
         </div>
         <Searched searchs={searchs} />
       </div>

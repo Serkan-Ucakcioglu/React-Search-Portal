@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectedSearch } from "../dataSlice";
 import useSearchs from "../../Hooks/useSearchs";
 import { Link } from "react-router-dom";
+import AddRecord from "../Main/AddRecord";
 
 function SearchDetail() {
   const searchs = useSelector(selectedSearch);
@@ -24,6 +25,9 @@ function SearchDetail() {
         <button disabled={!searchs?.length} className="search_btn">
           Search
         </button>
+      </div>
+      <div className="record">
+        <AddRecord />
       </div>
     </div>
   );
