@@ -50,47 +50,10 @@
       font-size: 32px;
       color: #090a0a;
     }
-    .search {
-      display: flex;
-      position: relative;
-      flex-direction: row;
-      align-items: center;
-      margin-left: 15px;
 
-      .search_svg {
-        position: absolute;
-        left: 15px;
-        right: 0px;
-        top: 15px;
-        bottom: 0px;
-        width: 20px;
-        height: 20px;
-      }
-
-      .search_input {
-        width: 646px;
-        border: 2px solid #204080;
-        padding-left: 40px;
-        box-sizing: border-box;
-        border-radius: 8px;
-        height: 48px;
-        margin-right: 11px;
-      }
-      .search_btn {
-        width: 138px;
-        height: 46px;
-        font-size: 18px;
-        font-weight: 700;
-        background: #204080;
-        border-radius: 12px;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-    }
     .search_result {
       width: 710.84px;
-      height: 248.25px;
+      height: 250.25px;
       padding-left: 10px;
       overflow: auto;
       background: #ffffff;
@@ -114,7 +77,7 @@
         align-items: center;
         margin-top: 16px;
         margin-left: 15px;
-        padding: 15px;
+        padding: 25px;
         box-sizing: border-box;
         border-bottom: 1px solid #f1f1f1;
         height: 60px;
@@ -135,6 +98,9 @@
             margin-bottom: 5px;
           }
         }
+      }
+      .item:nth-child(3) {
+        border: none !important;
       }
     }
   }
@@ -307,6 +273,15 @@
       }
     }
   }
+  .search_detail {
+    display: flex;
+    padding: 27px;
+    justify-content: flex-start;
+    img {
+      width: 149px;
+      height: 63px;
+    }
+  }
 }
 
 .container {
@@ -317,4 +292,43 @@
 .last {
   border: none !important;
   margin-top: 10px !important;
+}
+.search {
+  display: flex;
+  position: relative;
+  height: 48px;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+
+  .search_svg {
+    position: absolute;
+    left: 15px;
+    right: 0px;
+    top: 15px;
+    bottom: 0px;
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .search_input {
+    width: 646px;
+    border: 2px solid #204080;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 48px;
+    margin-right: 11px;
+  }
+  .search_btn {
+    width: 138px;
+    height: 46px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #204080;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 }

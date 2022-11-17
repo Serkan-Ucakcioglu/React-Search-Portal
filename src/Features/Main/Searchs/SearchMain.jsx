@@ -1,38 +1,15 @@
 import React from "react";
 import logo from "../../../Svg/Logo.svg";
 import Search from "../../../Svg/Search.svg";
-import { useDispatch, useSelector } from "react-redux";
-import db from "../../../db.json";
-import {
-  lastSearchs,
-  search,
-  selectedData,
-  selectedLast,
-  selectedSearch,
-} from "../../dataSlice";
+import { useSelector } from "react-redux";
 import Searched from "./Searched";
+import useSearchs from "../../../Hooks/useSearchs";
+import { selectedSearch } from "../../dataSlice";
 
 function SearchMain() {
-  const keys = db.cols;
-  const dispatch = useDispatch();
-
-  const lastSearch = useSelector(selectedLast);
-  const data = useSelector(selectedData);
   const searchs = useSelector(selectedSearch);
 
-  const onChanges = (e) => {
-    const { value } = e.target;
-    dispatch(lastSearchs(value));
-    dispatch(
-      search(
-        data.filter((user) =>
-          keys.some((key) =>
-            user[key].toUpperCase().includes(value.toUpperCase())
-          )
-        )
-      )
-    );
-  };
+  const { onChanges, lastSearch } = useSearchs();
   return (
     <>
       <div className="search_head">

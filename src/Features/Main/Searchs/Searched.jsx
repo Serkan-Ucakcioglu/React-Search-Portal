@@ -1,4 +1,5 @@
 import Location from "../../../Svg/Location.svg";
+import { Link } from "react-router-dom";
 
 function Searched({ searchs }) {
   const content = searchs.length && (
@@ -15,9 +16,9 @@ function Searched({ searchs }) {
         );
       })}
       {searchs?.length >= 3 && (
-        <a href="#" className="show_text">
+        <Link to="search-result" className="show_text">
           Show more...
-        </a>
+        </Link>
       )}
     </div>
   );
