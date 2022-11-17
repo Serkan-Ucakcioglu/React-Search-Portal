@@ -16,15 +16,18 @@ function useSearchs() {
   const onChanges = (e) => {
     const { value } = e.target;
     dispatch(lastSearchs(value));
-    dispatch(
-      search(
-        data.filter((user) =>
-          cols.some((key) =>
-            user[key].toUpperCase().includes(value.trim().toUpperCase())
+    if (value?.length > 2) {
+      dispatch(
+        search(
+          data.filter((user) =>
+            cols.some((key) =>
+              user[key].toUpperCase().includes(value.trim().toUpperCase())
+            )
           )
         )
-      )
-    );
+      );
+      console.log(value, "v");
+    }
   };
   return { onChanges, lastSearch };
 }
