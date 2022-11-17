@@ -1,3 +1,7 @@
+* {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
   .new_record {
@@ -308,7 +312,14 @@
   .detail_content {
     display: flex;
     justify-content: center;
-
+    .pagi {
+      width: 700px;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 50px;
+    }
     .item_list {
       width: 720px;
       height: 505px;
@@ -465,4 +476,37 @@
     border: none;
     cursor: pointer;
   }
+}
+
+.pagi_list {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  .pagenumber {
+    cursor: pointer;
+    border: 1px solid #484848;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Roboto;
+  }
+  .prev {
+    cursor: pointer;
+    border: 1px solid #484848;
+    width: 85px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Roboto;
+  }
+}
+
+.active {
+  background: #204080 !important;
+  color: white !important;
 }

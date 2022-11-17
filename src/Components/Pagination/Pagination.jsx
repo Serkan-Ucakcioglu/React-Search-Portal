@@ -1,28 +1,58 @@
-import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectedSearch } from "../../Features/dataSlice";
-import PaginationItem from "./PaginationItem";
+import { usePagination, DOTS } from "../../Hooks/usePagination";
+const Pagination = (props) => {
+  const {
+    onPageChange,
+    totalCount,
+    siblingCount = 1,
+    currentPage,
+    pageSize,
+  } = props;
 
-function Pagination() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(10);
+  const paginationRange = usePagination({
+    currentPage,
+    totalCount,
+    siblingCount,
+    pageSize,
+  });
 
-  const data = useSelector(selectedSearch);
-  const newData = useMemo(() => {
-    const lastRecord = currentPage * recordsPerPage;
-    const firstRecord = lastRecord - recordsPerPage;
-    return data.slice(firstRecord, lastRecord);
-  }, [currentPage, data]);
+  if (currentPage === 0 || paginationRange.length < 2) return null;
 
   return (
-    <div className="container mt-5">
-      <PaginationItem
-        pages={data?.length}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
-    </div>
+    <ul className="pagi_list">
+      <li
+        className="prev"
+        onClick={() => {
+          if (currentPage > 1) {
+            onPageChange(currentPage - 1);
+          }
+        }}
+      >
+        Previous
+      </li>
+      {paginationRange?.map((pageNumber) => {
+        if (pageNumber === DOTS) {
+          return <li className="pagination-item dots">&#8230;</li>;
+        }
+
+        return (
+          <li
+            className={`pagenumber ${pageNumber === currentPage && "active"}`}
+            onClick={() => onPageChange(pageNumber)}
+          >
+            {pageNumber}
+          </li>
+        );
+      })}
+      <li
+        className="prev"
+        onClick={() => {
+          onPageChange(currentPage + 1);
+        }}
+      >
+        Next
+      </li>
+    </ul>
   );
-}
+};
 
 export default Pagination;
