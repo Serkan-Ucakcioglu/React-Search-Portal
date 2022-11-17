@@ -24,7 +24,7 @@ function SearchContent() {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return searchs?.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+  }, [currentPage, searchs]);
 
   return (
     <div className="detail_content">
