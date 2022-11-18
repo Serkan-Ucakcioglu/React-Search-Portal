@@ -43,7 +43,7 @@ function AddUser() {
               minLength: { value: 4, message: "Minimum 4 character!" },
               maxLength: { value: 60, message: "Maximum 60 character!" },
               pattern: {
-                value: /^[a-zA-Z]+$/g,
+                value: /^[a-zA-Z\u00C0-\u017F]+(?:\s[a-zA-Z\u00C0-\u017F]+)*$/,
                 message: "Only Letters",
               },
             })}
@@ -61,7 +61,7 @@ function AddUser() {
               minLength: { value: 2, message: "Minimum 2 character!" },
               maxLength: { value: 40, message: "Maximum 40 character!" },
               pattern: {
-                value: /^[a-zA-Z]+$/g,
+                value: /^[a-zA-Z\u00C0-\u017F]+(?:\s[a-zA-Z\u00C0-\u017F]+)*$/,
                 message: "Only Letters",
               },
             })}
@@ -79,7 +79,7 @@ function AddUser() {
               minLength: { value: 2, message: "Minimum 2 character!" },
               maxLength: { value: 40, message: "Maximum 40 character!" },
               pattern: {
-                value: /^[a-zA-Z]+$/g,
+                value: /^[a-zA-Z\u00C0-\u017F]+(?:\s[a-zA-Z\u00C0-\u017F]+)*$/,
                 message: "Only Letters",
               },
             })}
