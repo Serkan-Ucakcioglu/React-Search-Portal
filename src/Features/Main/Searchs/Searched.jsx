@@ -2,7 +2,7 @@ import Location from "../../../Svg/Location.svg";
 import { Link } from "react-router-dom";
 
 function Searched({ searchs }) {
-  const content = searchs.length && (
+  const content = searchs?.length ? (
     <div className="search_result">
       {searchs?.slice(0, 3)?.map((user) => {
         return (
@@ -21,7 +21,8 @@ function Searched({ searchs }) {
         </Link>
       )}
     </div>
-  );
+  ) : null;
+
   return content;
 }
 
