@@ -208,7 +208,13 @@
         width: 100%;
         margin-left: 39px;
         display: flex;
+        align-items: center;
         margin-right: auto;
+        .arrow {
+          img {
+            width: 26px;
+          }
+        }
         h1 {
           font-family: "Roboto";
           font-style: normal;
@@ -216,9 +222,6 @@
           font-size: 24px;
           color: #484848;
           margin-left: 12px;
-        }
-        img {
-          width: 26px;
         }
       }
     }

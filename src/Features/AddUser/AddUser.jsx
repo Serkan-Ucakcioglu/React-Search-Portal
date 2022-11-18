@@ -1,7 +1,7 @@
 import Logo from "../../Svg/Logo.svg";
 import Arrow from "../../Svg/Arrows.svg";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addRecord } from "../dataSlice";
 
@@ -14,6 +14,7 @@ function AddUser() {
   } = useForm();
   const dispatch = useDispatch();
 
+  const location = useLocation();
   const onSubmit = (data) => {
     dispatch(addRecord(data));
     reset();
@@ -25,7 +26,10 @@ function AddUser() {
           <img className="logo" src={Logo} alt="logo" />
         </Link>
         <div className="title">
-          <img src={Arrow} alt="arrow" />
+          <Link className="arrow" to={location?.state?.pathname}>
+            {" "}
+            <img src={Arrow} alt="arrow" />
+          </Link>
           <h1>Return to List Page</h1>
         </div>
       </div>
