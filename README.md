@@ -6,6 +6,8 @@
 
 ### SEARCH PAGE
 <img width="1351" alt="image" src="https://user-images.githubusercontent.com/98692987/202679334-c345e3d4-8468-4ebe-ad67-0be1b509bcd7.png">
+<img width="1324" alt="image" src="https://user-images.githubusercontent.com/98692987/202689623-97f34214-b059-44d5-b2f1-04fd641bdd88.png">
+
 
 
 ### ADD USER PAGE
