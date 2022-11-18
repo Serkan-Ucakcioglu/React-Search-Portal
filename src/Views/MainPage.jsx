@@ -1,7 +1,7 @@
 import React from "react";
 import AddRecord from "../Features/Main/AddRecord";
 import Footer from "../Features/Main/Footer";
-import SearchMain from "../Features/Main/SearchMain";
+import SearchMain from "../Features/Main/Searchs/SearchMain";
 import TopNews from "../Features/Main/TopNews";
 
 function MainPage() {
