@@ -27,24 +27,26 @@ function TopNews() {
     },
   ];
 
+  const content = topsData?.map((news) => {
+    return (
+      <div className="news_tops">
+        <img src={news?.img} alt="topnews" />
+        <div className="news_text">
+          <span className="news_title">{news.title}</span>
+          <span className="news_time">
+            {news.time} ,{news.createdBy}
+          </span>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <div className="tops">
       <h1 className="tops_head_title">Top News</h1>
       <div className="news">
         <img className="left" src={left} alt="left" />
-        {topsData?.map((news) => {
-          return (
-            <div className="news_tops">
-              <img src={news?.img} alt="topnews" />
-              <div className="news_text">
-                <span className="news_title">{news.title}</span>
-                <span className="news_time">
-                  {news.time} ,{news.createdBy}
-                </span>
-              </div>
-            </div>
-          );
-        })}
+        {content}
         <img className="right" src={left} alt="right" />
       </div>
     </div>
