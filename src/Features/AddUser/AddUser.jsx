@@ -94,9 +94,9 @@ function AddUser() {
           />
           <span className="form_err">{errors?.Email?.message}</span>
         </div>
-        <a className="btn">
+        <div className="btn">
           <button className="add_btn">Add</button>
-        </a>
+        </div>
       </form>
     </div>
   );

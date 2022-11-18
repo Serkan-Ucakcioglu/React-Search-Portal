@@ -1,5 +1,4 @@
 import Logo from "../../Svg/Logo.svg";
-import Search from "../../Svg/Search.svg";
 import { useSelector } from "react-redux";
 import { selectedSearch } from "../dataSlice";
 import useSearchs from "../../Hooks/useSearchs";
