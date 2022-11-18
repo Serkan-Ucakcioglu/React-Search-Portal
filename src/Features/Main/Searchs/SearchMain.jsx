@@ -3,14 +3,13 @@ import logo from "../../../Svg/Logo.svg";
 import Search from "../../../Svg/Search.svg";
 import { useSelector } from "react-redux";
 import Searched from "./Searched";
-import useSearchs from "../../../Hooks/useSearchs";
 import { selectedSearch } from "../../dataSlice";
 import { Link } from "react-router-dom";
+import SearchInput from "./SearchInput";
 
 function SearchMain() {
   const searchs = useSelector(selectedSearch);
 
-  const { onChanges, lastSearch } = useSearchs();
   return (
     <>
       <div className="search_head">
@@ -21,12 +20,7 @@ function SearchMain() {
         <h1>Find in records</h1>
         <div className="search">
           <img className="search_svg" src={Search} alt="search-svg" />
-          <input
-            value={lastSearch}
-            onChange={onChanges}
-            className="search_input"
-            type="text"
-          />
+          <SearchInput />
           <Link to="search-result">
             {" "}
             <button disabled={!searchs?.length} className="search_btn">
