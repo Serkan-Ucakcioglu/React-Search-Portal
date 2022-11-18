@@ -2,22 +2,15 @@ import Logo from "../../Svg/Logo.svg";
 import Arrow from "../../Svg/Arrows.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addRecord } from "../dataSlice";
 
 function AddUser() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
-  const dispatch = useDispatch();
+  const onSubmit = (data) => console.log(data);
 
-  const onSubmit = (data) => {
-    dispatch(addRecord(data));
-    reset();
-  };
   return (
     <div className="add_user">
       <div className="head_user">
@@ -94,9 +87,9 @@ function AddUser() {
           />
           <span className="form_err">{errors?.Email?.message}</span>
         </div>
-        <a className="btn">
+        <div className="btn">
           <button className="add_btn">Add</button>
-        </a>
+        </div>
       </form>
     </div>
   );
