@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
@@ -8,7 +8,7 @@ import MainPage from "../Views/MainPage";
 import AddUsers from "../Views/AddUsers";
 import SearchDetails from "../Views/SearchDetails";
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<MainPage />} />
