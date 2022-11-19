@@ -26,7 +26,6 @@ function useSearchs() {
           )
         )
       );
-      console.log(value, "v");
     }
   };
   return { onChanges, lastSearch };
