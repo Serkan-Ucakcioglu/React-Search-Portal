@@ -7,6 +7,7 @@ import App from "../App";
 import MainPage from "../Views/MainPage";
 import AddUsers from "../Views/AddUsers";
 import SearchDetails from "../Views/SearchDetails";
+import Page404 from "../Views/Page404";
 
 export const router = createHashRouter(
   createRoutesFromElements(
@@ -14,6 +15,7 @@ export const router = createHashRouter(
       <Route index element={<MainPage />} />
       <Route path="add-users" element={<AddUsers />} />
       <Route path="search-result" element={<SearchDetails />} />
+      <Route path="*" element={<Page404 />} />
     </Route>
   )
 );
