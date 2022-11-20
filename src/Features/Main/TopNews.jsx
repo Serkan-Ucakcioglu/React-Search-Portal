@@ -30,7 +30,7 @@ function TopNews() {
   const content = topsData?.map((news) => {
     return (
       <div className="news_tops">
-        <img src={news?.img} alt="topnews" />
+        <img loading="lazy" src={news?.img} alt="topnews" />
         <div className="news_text">
           <span className="news_title">{news.title}</span>
           <span className="news_time">
