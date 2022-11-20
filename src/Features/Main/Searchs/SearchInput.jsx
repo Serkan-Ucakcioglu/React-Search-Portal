@@ -7,6 +7,7 @@ function SearchInput() {
       value={lastSearch}
       onChange={onChanges}
       className="search_input"
+      placeholder="Search..."
       type="text"
     />
   );
