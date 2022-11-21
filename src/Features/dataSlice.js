@@ -24,6 +24,9 @@ const dataSlice = createSlice({
       );
       if (!checkUser) {
         state.data.push(payload);
+        alert("Başarıyla Eklendi");
+      } else {
+        alert("Eklenemedi");
       }
       localStorage.setItem("allData", JSON.stringify(state.data));
     },
