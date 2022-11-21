@@ -15,6 +15,7 @@ const Pagination = (props) => {
     pageSize,
   });
 
+  const max = Math.ceil(totalCount / pageSize);
   if (currentPage === 0 || paginationRange.length < 2) return null;
 
   return (
@@ -46,7 +47,9 @@ const Pagination = (props) => {
       <li
         className="prev"
         onClick={() => {
-          onPageChange(currentPage + 1);
+          if (currentPage < max) {
+            onPageChange(currentPage + 1);
+          }
         }}
       >
         Next
