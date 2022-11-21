@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import image from "../../Svg/Image.svg";
 import left from "../../Svg/Left.svg";
 
