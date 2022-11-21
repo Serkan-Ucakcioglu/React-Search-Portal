@@ -48,10 +48,10 @@ function TopNews() {
     },
     {
       id: 4,
-      img: image,
+      img: "https://i.hizliresim.com/mr755uh.jpeg",
       title: "A Plan to Rebuild the Bus Terminal Everyone Loves to Hate",
       time: "1h ago",
-      createdBy: "by Troy Corlson",
+      createdBy: "Serkan Uçakcıoğlu",
     },
   ];
 
@@ -60,7 +60,7 @@ function TopNews() {
       <div className="news_tops">
         <img
           loading="lazy"
-          width={327}
+          width={320}
           height={195}
           src={news?.img}
           alt="topnews"
