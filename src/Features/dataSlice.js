@@ -50,6 +50,7 @@ const dataSlice = createSlice({
     },
     dateasc: (state) => {
       // tarihi unix timestamp'e çevirir
+
       const unixDates = state?.search?.map((user) => {
         const [day, month, year] = user?.Date?.split("/");
         return { ...user, Date: new Date(`${month}/${day}/${year}`).getTime() };
@@ -59,11 +60,13 @@ const dataSlice = createSlice({
       // sıralanmış unix timestamp'ı tarihe çevirir
       const sortedDates = sortedUnixDates?.map((user) => {
         const date = new Date(user.Date);
-        const day = date.getDay();
+        const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
         return { ...user, Date: `${day}/${month}/${year}` };
       });
+      console.log(sortedDates);
+
       state.search = sortedDates;
     },
     datedesc: (state) => {
@@ -76,11 +79,13 @@ const dataSlice = createSlice({
       // sıralanmış unix timestamp'ı tarihe çevirir
       const sortedDates = sortedUnixDates?.map((user) => {
         const date = new Date(user.Date);
-        const day = date.getDay();
+        const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
         return { ...user, Date: `${day}/${month}/${year}` };
       });
+      console.log(sortedDates);
+
       state.search = sortedDates;
     },
   },
