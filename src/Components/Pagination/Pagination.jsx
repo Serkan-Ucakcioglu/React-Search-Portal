@@ -15,9 +15,8 @@ const Pagination = (props) => {
     pageSize,
   });
 
-  const max = Math.ceil(totalCount / pageSize);
+  const max = Math.ceil(totalCount / pageSize); // max page
   if (currentPage === 0 || paginationRange.length < 2) return null;
-
   return (
     <ul className="pagi_list">
       <li
@@ -32,7 +31,7 @@ const Pagination = (props) => {
       </li>
       {paginationRange?.map((pageNumber) => {
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return <li className="pagination-item dots">...</li>;
         }
 
         return (

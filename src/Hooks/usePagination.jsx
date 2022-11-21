@@ -8,15 +8,15 @@ const range = (start, end) => {
 };
 
 export function usePagination({
-  totalCount,
-  pageSize,
-  siblingCount = 1,
-  currentPage,
+  totalCount, //total
+  pageSize, // bir sayfadaki liste
+  siblingCount = 1, // kardeş sayısı
+  currentPage, // mevcut sayfa
 }) {
   const paginationRange = useMemo(() => {
-    const totalPageCount = Math.ceil(totalCount / pageSize);
+    const totalPageCount = Math.ceil(totalCount / pageSize); //total page
 
-    const totalPageNumbers = siblingCount + 5;
+    const totalPageNumbers = siblingCount + 2;
 
     if (totalPageNumbers >= totalPageCount) {
       return range(1, totalPageCount);
@@ -34,6 +34,7 @@ export function usePagination({
     const firstPageIndex = 1;
     const lastPageIndex = totalPageCount;
 
+    // sol
     if (!leftDots && rightDots) {
       let leftItemCount = 3 + 2 * siblingCount;
       let leftRange = range(1, leftItemCount);
@@ -41,8 +42,9 @@ export function usePagination({
       return [...leftRange, DOTS, totalPageCount];
     }
 
+    //sağ
     if (leftDots && !rightDots) {
-      let rightItemCount = 3 + 2 * siblingCount;
+      let rightItemCount = 1 + 2 * siblingCount;
       let rightRange = range(
         totalPageCount - rightItemCount + 1,
         totalPageCount
@@ -50,9 +52,13 @@ export function usePagination({
       return [firstPageIndex, DOTS, ...rightRange];
     }
 
-    if (leftDots && rightDots) {
+    if (totalPageCount > 2) {
       let middleRange = range(leftSiblingIndex, rightSiblingIndex);
-      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
+      if (currentPage + 1 < lastPageIndex) {
+        return [...middleRange, DOTS, lastPageIndex];
+      } else {
+        return [...middleRange, DOTS];
+      }
     }
   }, [totalCount, pageSize, siblingCount, currentPage]);
 
