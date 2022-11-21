@@ -50,7 +50,6 @@ const dataSlice = createSlice({
     },
     dateasc: (state) => {
       // tarihi unix timestamp'e çevirir
-
       const unixDates = state?.search?.map((user) => {
         const [day, month, year] = user?.Date?.split("/");
         return { ...user, Date: new Date(`${month}/${day}/${year}`).getTime() };
@@ -68,6 +67,7 @@ const dataSlice = createSlice({
       state.search = sortedDates;
     },
     datedesc: (state) => {
+      // tarihi unix timestamp'e çevirir
       const unixDates = state?.search?.map((user) => {
         const [day, month, year] = user?.Date?.split("/");
         return { ...user, Date: new Date(`${month}/${day}/${year}`).getTime() };
