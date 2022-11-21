@@ -65,8 +65,6 @@ const dataSlice = createSlice({
         const year = date.getFullYear();
         return { ...user, Date: `${day}/${month}/${year}` };
       });
-      console.log(sortedDates);
-
       state.search = sortedDates;
     },
     datedesc: (state) => {
@@ -84,7 +82,6 @@ const dataSlice = createSlice({
         const year = date.getFullYear();
         return { ...user, Date: `${day}/${month}/${year}` };
       });
-      console.log(sortedDates);
 
       state.search = sortedDates;
     },
