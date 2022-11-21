@@ -379,6 +379,9 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
+          span {
+            text-align: right;
+          }
         }
       }
       .item:hover {
