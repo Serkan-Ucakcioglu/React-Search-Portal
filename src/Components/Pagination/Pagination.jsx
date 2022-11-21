@@ -15,6 +15,21 @@ const Pagination = (props) => {
     pageSize,
   });
 
+  const content = paginationRange?.map((pageNumber) => {
+    if (pageNumber === DOTS) {
+      return <li className="pagination-item dots">...</li>;
+    }
+
+    return (
+      <li
+        className={`pagenumber ${pageNumber === currentPage && "active"}`}
+        onClick={() => onPageChange(pageNumber)}
+      >
+        {pageNumber}
+      </li>
+    );
+  });
+
   const max = Math.ceil(totalCount / pageSize); // max page
   if (currentPage === 0 || paginationRange.length < 2) return null;
   return (
@@ -29,20 +44,7 @@ const Pagination = (props) => {
       >
         Previous
       </li>
-      {paginationRange?.map((pageNumber) => {
-        if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">...</li>;
-        }
-
-        return (
-          <li
-            className={`pagenumber ${pageNumber === currentPage && "active"}`}
-            onClick={() => onPageChange(pageNumber)}
-          >
-            {pageNumber}
-          </li>
-        );
-      })}
+      {content}
       <li
         className="prev"
         onClick={() => {
