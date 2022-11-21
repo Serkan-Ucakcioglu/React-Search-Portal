@@ -49,10 +49,39 @@ const dataSlice = createSlice({
       );
     },
     dateasc: (state) => {
-      state.search.sort((a, b) => a.Date.localeCompare(b.Date));
+      // tarihi unix timestamp'e çevirir
+      const unixDates = state?.search?.map((user) => {
+        const [day, month, year] = user?.Date?.split("/");
+        return { ...user, Date: new Date(`${month}/${day}/${year}`).getTime() };
+      });
+      const sortedUnixDates = unixDates.sort((a, b) => a.Date - b.Date);
+
+      // sıralanmış unix timestamp'ı tarihe çevirir
+      const sortedDates = sortedUnixDates?.map((user) => {
+        const date = new Date(user.Date);
+        const day = date.getDay();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return { ...user, Date: `${day}/${month}/${year}` };
+      });
+      state.search = sortedDates;
     },
     datedesc: (state) => {
-      state.search.sort((a, b) => b.Date.localeCompare(a.Date));
+      const unixDates = state?.search?.map((user) => {
+        const [day, month, year] = user?.Date?.split("/");
+        return { ...user, Date: new Date(`${month}/${day}/${year}`).getTime() };
+      });
+      const sortedUnixDates = unixDates.sort((a, b) => b.Date - a.Date);
+
+      // sıralanmış unix timestamp'ı tarihe çevirir
+      const sortedDates = sortedUnixDates?.map((user) => {
+        const date = new Date(user.Date);
+        const day = date.getDay();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return { ...user, Date: `${day}/${month}/${year}` };
+      });
+      state.search = sortedDates;
     },
   },
 });
