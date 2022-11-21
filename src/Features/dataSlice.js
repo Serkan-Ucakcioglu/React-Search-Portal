@@ -36,13 +36,13 @@ const dataSlice = createSlice({
       localStorage.setItem("searchList", JSON.stringify(state.search));
     },
     nameasc: (state) => {
-      state.search.sort((a, b) =>
-        a["Name Surname"] > b["Name Surname"] ? 1 : -1
+      state.search = state.search.sort((a, b) =>
+        a["Name Surname"].localeCompare(b["Name Surname"])
       );
     },
     namedesc: (state) => {
-      state.search.sort((a, b) =>
-        a["Name Surname"] < b["Name Surname"] ? 1 : -1
+      state.search = state.search.sort((a, b) =>
+        b["Name Surname"].localeCompare(a["Name Surname"])
       );
     },
     dateasc: (state) => {
