@@ -46,10 +46,10 @@ const dataSlice = createSlice({
       );
     },
     dateasc: (state) => {
-      state.search.sort((a, b) => (a.Date > b.Date ? 1 : -1));
+      state.search.sort((a, b) => a.Date.localeCompare(b.Date));
     },
     datedesc: (state) => {
-      state.search.sort((a, b) => (a.Date < b.Date ? 1 : -1));
+      state.search.sort((a, b) => b.Date.localeCompare(a.Date));
     },
   },
 });
