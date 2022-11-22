@@ -22,7 +22,7 @@ function SearchMain() {
         <div className="search">
           <img className="search_svg" src={Search} alt="search-svg" />
           <SearchInput />
-          {lastSearch.length > 2 ? (
+          {lastSearch.length > 2 && searchs.length ? (
             <Link to="search-result">
               {" "}
               <button className="search_btn">Search</button>
