@@ -1,4 +1,5 @@
 Arama Detail Sayfasında inputta birşey varsa onu filtrelip gösteriyor yoksa tüm datayı gösterecek şekilde yaptım.
+<br>
 If there is something in the input on the Search Detail Page, it shows it with a filter, otherwise I made it so that it shows all the data.
 
 ### MAİN PAGE
