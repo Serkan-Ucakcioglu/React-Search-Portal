@@ -1,11 +1,14 @@
 import Location from "../../../Svg/Location.svg";
 import { Link } from "react-router-dom";
 import useSearchs from "../../../Hooks/useSearchs";
+import { useSelector } from "react-redux";
+import { selectedSearch } from "../../dataSlice";
 
 function Searched({ searchs }) {
   const { lastSearch } = useSearchs();
+  const search = useSelector(selectedSearch);
   const content =
-    lastSearch.length > 2 ? (
+    lastSearch.length > 2 && search.length ? (
       <div className="search_result">
         {searchs?.slice(0, 3)?.map((user) => {
           return (
