@@ -6,10 +6,11 @@ import Searched from "./Searched";
 import { selectedSearch } from "../../dataSlice";
 import { Link } from "react-router-dom";
 import SearchInput from "./SearchInput";
+import useSearchs from "../../../Hooks/useSearchs";
 
 function SearchMain() {
   const searchs = useSelector(selectedSearch);
-
+  const { lastSearch } = useSearchs();
   return (
     <>
       <div className="search_head">
@@ -21,12 +22,17 @@ function SearchMain() {
         <div className="search">
           <img className="search_svg" src={Search} alt="search-svg" />
           <SearchInput />
-          <Link to="search-result">
-            {" "}
-            <button disabled={!searchs?.length} className="search_btn">
+          {lastSearch.length > 2 ? (
+            <Link to="search-result">
+              {" "}
+              <button className="search_btn">Search</button>
+            </Link>
+          ) : (
+            <button className="search_btn" disabled>
+              {" "}
               Search
             </button>
-          </Link>
+          )}
         </div>
         <Searched searchs={searchs} />
       </div>
