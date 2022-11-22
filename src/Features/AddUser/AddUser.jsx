@@ -16,9 +16,10 @@ function AddUser() {
 
   const location = useLocation();
   const onSubmit = (data) => {
+    const date = new Date();
     const req = {
       ...data,
-      Date: new Date(),
+      Date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
       Company: "TESODEV",
     };
     dispatch(addRecord(req));
