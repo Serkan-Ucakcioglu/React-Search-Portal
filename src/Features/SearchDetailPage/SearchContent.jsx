@@ -19,9 +19,11 @@ function SearchContent() {
   const dispatch = useDispatch();
   const searchs = useSelector(selectedSearch);
   const allData = useSelector(selectedData);
+
   const [show, setShow] = useState(false);
-  const { lastSearch } = useSearchs();
   const [currentPage, setCurrentPage] = useState(1);
+
+  const { lastSearch } = useSearchs();
 
   const currentSearchData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
