@@ -6,18 +6,21 @@ import {
   dateasc,
   datedesc,
   selectedSearch,
+  selectedData,
 } from "../dataSlice";
 import Orders from "../../Svg/Orders.svg";
 import SearchList from "./SearchList";
 import Pagination from "../../Components/Pagination/Pagination";
+import useSearchs from "../../Hooks/useSearchs";
 
 let PageSize = 5;
 
 function SearchContent() {
   const dispatch = useDispatch();
   const searchs = useSelector(selectedSearch);
+  const allData = useSelector(selectedData);
   const [show, setShow] = useState(false);
-
+  const { lastSearch } = useSearchs();
   const [currentPage, setCurrentPage] = useState(1);
 
   const currentSearchData = useMemo(() => {
@@ -26,12 +29,18 @@ function SearchContent() {
     return searchs?.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, searchs]);
 
+  const data = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return allData?.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, allData]);
+
   return (
     <div className="detail_content">
       <div className="item_list">
-        {currentSearchData?.map((user) => (
-          <SearchList user={user} />
-        ))}
+        {lastSearch.length > 2
+          ? currentSearchData?.map((user) => <SearchList user={user} />)
+          : data.map((user) => <SearchList user={user} />)}
       </div>
       <div className="order">
         <button className="order_btn" onClick={() => setShow((prev) => !prev)}>
@@ -50,7 +59,7 @@ function SearchContent() {
       <div className="pagi">
         <Pagination
           currentPage={currentPage}
-          totalCount={searchs?.length}
+          totalCount={lastSearch.length > 2 ? searchs.length : allData.length}
           pageSize={PageSize}
           onPageChange={(page) => setCurrentPage(page)}
         />

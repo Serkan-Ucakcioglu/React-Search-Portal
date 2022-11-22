@@ -33,6 +33,9 @@ const dataSlice = createSlice({
     lastSearchs: (state, { payload }) => {
       state.lastSearch = payload;
       localStorage.setItem("lastSearch", JSON.stringify(payload));
+      if (state.lastSearch < 2) {
+        localStorage.setItem("searchList", JSON.stringify([]));
+      }
     },
     search: (state, { payload }) => {
       state.search = payload;
