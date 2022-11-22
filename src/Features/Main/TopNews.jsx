@@ -77,10 +77,10 @@ function TopNews() {
   const slider = useRef();
 
   const goLeft = () => {
-    slider.current.scrollLeft += 250;
+    slider.current.scrollLeft -= 250;
   };
   const goRight = () => {
-    slider.current.scrollLeft -= 270;
+    slider.current.scrollLeft += 250;
   };
 
   return (
@@ -88,7 +88,6 @@ function TopNews() {
       <h1 className="tops_head_title">Top News</h1>
       <div className="content">
         <img className="left" onClick={goLeft} src={left} alt="left" />
-
         <div className="news" ref={slider}>
           {content}
         </div>
