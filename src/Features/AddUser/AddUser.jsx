@@ -40,6 +40,7 @@ function AddUser() {
         </div>
       </div>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        {/*Name Surname input */}
         <div className="add">
           <label htmlFor="name">Name Surname</label>
           <input
@@ -58,6 +59,8 @@ function AddUser() {
           />
           <span className="form_err">{errors?.["Name Surname"]?.message}</span>
         </div>
+
+        {/*Country input */}
         <div className="add">
           <label htmlFor="country">Country</label>
           <input
@@ -76,6 +79,8 @@ function AddUser() {
           />
           <span className="form_err">{errors?.Country?.message}</span>
         </div>
+
+        {/*City input */}
         <div className="add">
           <label htmlFor="city">City</label>
           <input
@@ -94,6 +99,8 @@ function AddUser() {
           />
           <span className="form_err">{errors?.City?.message}</span>
         </div>
+
+        {/*Email input */}
         <div className="add">
           <label htmlFor="email">Email</label>
           <input
@@ -104,6 +111,8 @@ function AddUser() {
           />
           <span className="form_err">{errors?.Email?.message}</span>
         </div>
+
+        {/*Submit Button */}
         <div className="btn">
           <button className="add_btn">Add</button>
         </div>
