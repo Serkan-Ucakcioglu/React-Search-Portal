@@ -12,7 +12,8 @@ If there is something in the input on the Search Detail Page, it shows it with a
 ### SEARCH PAGE
 <img width="1351" alt="image" src="https://user-images.githubusercontent.com/98692987/202679334-c345e3d4-8468-4ebe-ad67-0be1b509bcd7.png">
 <img width="1179" alt="image" src="https://user-images.githubusercontent.com/98692987/203028383-06584a1e-5bde-4bfb-a2a7-9c22a0b94224.png">
-### 404 Page
+
+### Error Page
 <img width="1316" alt="image" src="https://user-images.githubusercontent.com/98692987/202858730-601e62ae-3c90-44fe-ad46-6a64cd6d910a.png">
 
 
