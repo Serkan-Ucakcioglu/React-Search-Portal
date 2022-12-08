@@ -12,6 +12,7 @@ import Orders from "../../Svg/Orders.svg";
 import SearchList from "./SearchList";
 import Pagination from "../../Components/Pagination/Pagination";
 import useSearchs from "../../Hooks/useSearchs";
+import { useEffect } from "react";
 
 let PageSize = 5;
 
@@ -24,6 +25,10 @@ function SearchContent() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { lastSearch } = useSearchs();
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [lastSearch]);
 
   const currentSearchData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
