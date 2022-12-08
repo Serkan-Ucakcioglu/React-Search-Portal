@@ -1,8 +1,3 @@
-### About
-Arama Detail Sayfasında inputta birşey varsa onu filtrelip gösteriyor yoksa tüm datayı gösterecek şekilde yaptım.
-<br>
-If there is something in the input on the Search Detail Page, it shows it with a filter, otherwise I made it so that it shows all the data.
-
 ### MAİN PAGE
 <img width="1783" alt="image" src="https://user-images.githubusercontent.com/98692987/202678676-0dd6daa2-64d3-4c4c-be6a-bc6e8f6f159d.png">
 
