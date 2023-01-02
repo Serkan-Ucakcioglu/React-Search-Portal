@@ -11,6 +11,5 @@
 ### Error Page
 <img width="1316" alt="image" src="https://user-images.githubusercontent.com/98692987/202858730-601e62ae-3c90-44fe-ad46-6a64cd6d910a.png">
 
-
 ### ADD USER PAGE
 <img width="1182" alt="image" src="https://user-images.githubusercontent.com/98692987/202679411-5eb142d7-d462-464e-9742-821cd2373e06.png">
